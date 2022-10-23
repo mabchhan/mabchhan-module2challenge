@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   max-width: 1200px;
@@ -12,6 +16,7 @@ body {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: beige;
@@ -39,11 +44,15 @@ nav a {
 
 nav a:hover {
   cursor: pointer;
+  color: red;
+  /* font-size: 20px; */
 }
 
 main {
   display: flex;
   flex-direction: column;
+  /* flex-wrap: wrap; */
+  flex-shrink: 1;
 }
 
 .hero {
@@ -52,6 +61,17 @@ main {
   height: 200px;
   background-position: center;
   background-size: cover;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.hero::after {
+  content: "I code HTML and CSS by myself.";
+  position: absolute;
+  right: 10%;
+  top: 60%;
+  background-color: azure;
+  padding: 10px;
 }
 
 /* .hero:hover {
@@ -61,11 +81,102 @@ main {
 
 .content {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   margin: 30px;
+  /* padding: 0px 10px; */
 }
 
-/* .content aside {
-  flex: 25%;
+.content aside {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
   border-right: 2px solid orangered;
-} */
+  /* flex: 0 0 25%; */
+  width: 25%;
+}
+
+.content section {
+  width: 75%;
+}
+
+.content aside p {
+  /* width: 25%; */
+  padding-bottom: 30px;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.content img {
+  justify-content: center;
+  align-content: center;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+}
+
+.content-aboutme {
+  padding: 0 10px;
+}
+
+.content-work {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-work ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 30%; /* flex-grow: 1; flex-basis: 20%; */
+  list-style: none;
+  gap: 5px;
+}
+
+.content-work ul li {
+  position: relative;
+  flex: 1 40%;
+  padding-left: 10px;
+}
+
+.content-work ul li div {
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  background-color: azure;
+  padding: 10px;
+  border: 2px solid red;
+  line-height: 1.5;
+}
+
+.content-work ul img {
+  height: 150px;
+  border: 2px solid red;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-work ul img:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+  /* opacity: 90%; */
+}
+
+.content-work ul li:first-child {
+  flex: 2 100%;
+}
+
+.content-work ul img:last-child {
+  padding-bottom: 0;
+}
+
+.content-contactme ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0px 20px;
+}
+
+.content-contactme li a {
+  text-decoration: none;
+}
