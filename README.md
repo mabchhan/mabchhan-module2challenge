@@ -30,4 +30,7 @@ THEN I am presented with a responsive layout that adapts to my viewport
 
 - Link to Github repo
 
-- Link to deployed
+  - https://github.com/mabchhan/mabchhan-module2challenge
+
+- Link to deployed application
+  - https://mabchhan.github.io/mabchhan-module2challenge/
